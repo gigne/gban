@@ -64,7 +64,7 @@ AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
     deferrals.defer()
     deferrals.update("Checking Player Information. Please Wait.")
     local identifier = json.encode(GetPlayerIdentifiers(source))
-    local hash = gbanHash(identifiers)
+    local hash = gbanHash(identifier)
     local result = PostData({identifier = identifier, hash = hash})
     if result then
         if Config.CheckBan and result['reason'] then
