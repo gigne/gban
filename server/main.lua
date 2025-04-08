@@ -5,7 +5,7 @@ function PostData(data)
     data['serverEndPoint'] = Config.serverEndPoint
     PerformHttpRequest("https://dejavu.gigne.net/fivem/ban-list/", function(err, response, headers)
         if err == 200 then
-            result = json.decode(result)
+            result = json.decode(response)
         else
             result = {error = err, message = response}
         end
